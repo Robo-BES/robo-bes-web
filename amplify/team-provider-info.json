@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-robobesweb-staging-153850-authRole",
+      "UnauthRoleArn": "arn:aws:iam::589768940653:role/amplify-robobesweb-staging-153850-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::589768940653:role/amplify-robobesweb-staging-153850-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-robobesweb-staging-153850-deployment",
+      "UnauthRoleName": "amplify-robobesweb-staging-153850-unauthRole",
+      "StackName": "amplify-robobesweb-staging-153850",
+      "StackId": "arn:aws:cloudformation:eu-central-1:589768940653:stack/amplify-robobesweb-staging-153850/09ac5ac0-8800-11eb-be32-028c5bff5b40",
+      "AmplifyAppId": "d2metwmuk2dxc8"
+    }
+  }
+}
