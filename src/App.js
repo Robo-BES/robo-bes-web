@@ -13,10 +13,10 @@ import { focusHandling } from 'cruip-js-toolkit';
 
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import ResetPassword from './pages/ResetPassword';
 
 import Amplify, { Auth } from 'aws-amplify';
+import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 
@@ -40,7 +40,22 @@ function App() {
     focusHandling('outline');
   }, [location.pathname]); // triggered on route change
 
-  return (
+  const [authState, setAuthState] = React.useState();
+  const [user, setUser] = React.useState();
+
+  React.useEffect(() => {
+    return onAuthUIStateChange((nextAuthState, authData) => {
+      setAuthState(nextAuthState);
+      setUser(authData)
+    });
+  }, []);
+
+  return authState === AuthState.SignedIn && user ? (
+    <div className="App">
+      <div>Hello, {user.username}</div>
+      <AmplifySignOut />
+    </div>
+  ) : (
     <>
       <Switch>
         <Route exact path="/">
@@ -48,12 +63,6 @@ function App() {
         </Route>
         <Route path="/signin">
           <SignIn />
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-        <Route path="/reset-password">
-          <ResetPassword />
         </Route>
       </Switch>
     </>

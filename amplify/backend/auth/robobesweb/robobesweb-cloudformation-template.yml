@@ -133,7 +133,6 @@ Parameters:
   adminQueries:
     Type: String
             
-            
   
   thirdPartyAuth:
     Type: String
@@ -150,6 +149,11 @@ Parameters:
   dependsOn:
     Type: CommaDelimitedList
       
+            
+  
+  hostedUI:
+    Type: String
+            
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
   
@@ -226,6 +230,7 @@ Resources:
       
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
+      SmsAuthenticationMessage: !Ref smsAuthenticationMessage
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
         ExternalId: robobea472ebdb_role_external_id
