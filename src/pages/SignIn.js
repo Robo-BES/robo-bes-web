@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 
 function SignIn() {
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    let email = e.target.elements.email?.value;
+    let password = e.target.elements.password?.value;
+
+    console.log(email, password);
+};
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -24,7 +34,7 @@ function SignIn() {
 
               {/* Form */}
               <div className="max-w-sm mx-auto">
-                <form>
+                <form onSubmit={handleFormSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email</label>
