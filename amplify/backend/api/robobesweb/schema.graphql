@@ -1,0 +1,20 @@
+type Survey @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  risk_appetite: String
+  total_initial_money: Float
+  monhly_pay: Float
+  annual_pay: Float
+  userID: ID
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  age: Int
+  sex: String
+  name: String
+  surname: String
+  email: AWSEmail
+  marriage_info: String
+  Surveys: [Survey] @connection(keyName: "byUser", fields: ["id"])
+}
+ 
