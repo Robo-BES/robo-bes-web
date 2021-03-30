@@ -6,5 +6,8 @@
       "dependsOn": [],
       "customAuth": false
     }
-  }
+  },
+  "storage": {},
+  "function": {},
+  "api": {}
 }

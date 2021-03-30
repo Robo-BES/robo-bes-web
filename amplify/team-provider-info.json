@@ -10,6 +10,11 @@
       "StackName": "amplify-robobesweb-staging-153850",
       "StackId": "arn:aws:cloudformation:eu-central-1:589768940653:stack/amplify-robobesweb-staging-153850/09ac5ac0-8800-11eb-be32-028c5bff5b40",
       "AmplifyAppId": "d2metwmuk2dxc8"
+    },
+    "categories": {
+      "auth": {
+        "robobesweb": {}
+      }
     }
   }
 }
