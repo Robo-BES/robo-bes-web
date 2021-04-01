@@ -1,3 +1,13 @@
+type Portfolio @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  group_name: String
+  total_capital: Float
+  risk_ratio: Float
+  User: User @connection
+  userID: ID
+  model: String
+}
+
 type Survey @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
   id: ID!
   risk_appetite: String
@@ -5,6 +15,7 @@ type Survey @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: 
   monhly_pay: Float
   annual_pay: Float
   userID: ID
+  User: User @connection
 }
 
 type User @model @auth(rules: [{allow: public}]) {
@@ -16,5 +27,7 @@ type User @model @auth(rules: [{allow: public}]) {
   email: AWSEmail
   marriage_info: String
   Surveys: [Survey] @connection(keyName: "byUser", fields: ["id"])
+  Portfolios: [Portfolio] @connection(keyName: "byUser", fields: ["id"])
+  budget: String
 }
  
