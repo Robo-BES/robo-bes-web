@@ -4,15 +4,16 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class Survey {
+export declare class Portfolio {
   readonly id: string;
-  readonly risk_appetite?: string;
-  readonly total_initial_money?: number;
-  readonly monhly_pay?: number;
-  readonly annual_pay?: number;
+  readonly group_name?: string;
+  readonly total_capital?: number;
+  readonly risk_ratio?: number;
+  readonly User?: User;
   readonly userID?: string;
-  constructor(init: ModelInit<Survey>);
-  static copyOf(source: Survey, mutator: (draft: MutableModel<Survey>) => MutableModel<Survey> | void): Survey;
+  readonly model?: string;
+  constructor(init: ModelInit<Portfolio>);
+  static copyOf(source: Portfolio, mutator: (draft: MutableModel<Portfolio>) => MutableModel<Portfolio> | void): Portfolio;
 }
 
 export declare class User {
@@ -24,6 +25,20 @@ export declare class User {
   readonly email?: string;
   readonly marriage_info?: string;
   readonly Surveys?: (Survey | null)[];
+  readonly Portfolios?: (Portfolio | null)[];
+  readonly budget?: string;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+}
+
+export declare class Survey {
+  readonly id: string;
+  readonly risk_appetite?: string;
+  readonly total_initial_money?: number;
+  readonly monhly_pay?: number;
+  readonly annual_pay?: number;
+  readonly userID?: string;
+  readonly User?: User;
+  constructor(init: ModelInit<Survey>);
+  static copyOf(source: Survey, mutator: (draft: MutableModel<Survey>) => MutableModel<Survey> | void): Survey;
 }
