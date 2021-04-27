@@ -1,3 +1,34 @@
+type FundMetrics @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  FundGeneralInfo: FundGeneralInfo @connection
+  date: AWSDate
+  volume: Float
+  daily_yield: Float
+  monthly_yield: Float
+  three_monthly_yield: Float
+  six_monthly_yield: Float
+  yearly_yield: Float
+  price: Float
+}
+
+type FundGeneralInfo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  code: String
+  description: String
+  volume: Float
+  bes_group_name: String
+  PortfolioFunds: [PortfolioFund] @connection(keyName: "byFundGeneralInfo", fields: ["id"])
+}
+
+type PortfolioFund @model @auth(rules: [{allow: public}]) @key(name: "byFundGeneralInfo", fields: ["fundgeneralinfoID"]) @key(name: "byPortfolio", fields: ["portfolioID"]) {
+  id: ID!
+  percentage: Float
+  FundGeneralInfo: FundGeneralInfo @connection
+  Portfolio: Portfolio @connection
+  fundgeneralinfoID: ID
+  portfolioID: ID
+}
+
 type Portfolio @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
   id: ID!
   group_name: String
@@ -6,6 +37,7 @@ type Portfolio @model @auth(rules: [{allow: public}]) @key(name: "byUser", field
   User: User @connection
   userID: ID
   model: String
+  PortfolioFunds: [PortfolioFund] @connection(keyName: "byPortfolio", fields: ["id"])
 }
 
 type Survey @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {

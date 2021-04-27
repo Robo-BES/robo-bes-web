@@ -1,5 +1,289 @@
 export const schema = {
     "models": {
+        "FundMetrics": {
+            "name": "FundMetrics",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "FundGeneralInfo": {
+                    "name": "FundGeneralInfo",
+                    "isArray": false,
+                    "type": {
+                        "model": "FundGeneralInfo"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "fundMetricsFundGeneralInfoId"
+                    }
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "volume": {
+                    "name": "volume",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "daily_yield": {
+                    "name": "daily_yield",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "monthly_yield": {
+                    "name": "monthly_yield",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "three_monthly_yield": {
+                    "name": "three_monthly_yield",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "six_monthly_yield": {
+                    "name": "six_monthly_yield",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "yearly_yield": {
+                    "name": "yearly_yield",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "price": {
+                    "name": "price",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "FundMetrics",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "FundGeneralInfo": {
+            "name": "FundGeneralInfo",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "code": {
+                    "name": "code",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "volume": {
+                    "name": "volume",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "bes_group_name": {
+                    "name": "bes_group_name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "PortfolioFunds": {
+                    "name": "PortfolioFunds",
+                    "isArray": true,
+                    "type": {
+                        "model": "PortfolioFund"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "fundgeneralinfoID"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "FundGeneralInfos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PortfolioFund": {
+            "name": "PortfolioFund",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "percentage": {
+                    "name": "percentage",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "FundGeneralInfo": {
+                    "name": "FundGeneralInfo",
+                    "isArray": false,
+                    "type": {
+                        "model": "FundGeneralInfo"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "portfolioFundFundGeneralInfoId"
+                    }
+                },
+                "Portfolio": {
+                    "name": "Portfolio",
+                    "isArray": false,
+                    "type": {
+                        "model": "Portfolio"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "portfolioFundPortfolioId"
+                    }
+                },
+                "fundgeneralinfoID": {
+                    "name": "fundgeneralinfoID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "portfolioID": {
+                    "name": "portfolioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "PortfolioFunds",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byFundGeneralInfo",
+                        "fields": [
+                            "fundgeneralinfoID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPortfolio",
+                        "fields": [
+                            "portfolioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Portfolio": {
             "name": "Portfolio",
             "fields": {
@@ -57,6 +341,20 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "PortfolioFunds": {
+                    "name": "PortfolioFunds",
+                    "isArray": true,
+                    "type": {
+                        "model": "PortfolioFund"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "portfolioID"
+                    }
                 }
             },
             "syncable": true,
@@ -302,5 +600,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "09661744970eed93be2c079fa7bf4e5c"
+    "version": "4f6e147c94a584c9059ff6b5fcdab63f"
 };

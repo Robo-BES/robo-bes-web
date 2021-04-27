@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import {
   Switch,
   Route,
-  useLocation
+  useLocation, BrowserRouter, Redirect
 } from 'react-router-dom';
 
 import './css/style.scss';
@@ -14,10 +14,21 @@ import { focusHandling } from 'cruip-js-toolkit';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 
+// layouts
+
+import Admin from "./layouts/Admin.js";
+
+// views without layouts
+
+import Landing from "./pages/Landing.js";
+import Profile from "./pages/Profile.js";
+import Index from "./pages/Index.js";
+
 import Amplify, { Auth } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
+
 Amplify.configure(awsconfig);
 
 function App() {
@@ -45,16 +56,26 @@ function App() {
 
   React.useEffect(() => {
     return onAuthUIStateChange((nextAuthState, authData) => {
+      console.log('Here');
       setAuthState(nextAuthState);
       setUser(authData)
     });
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className="App">
-      <div>Hello, {user.username}</div>
-      <AmplifySignOut />
-    </div>
+      <BrowserRouter>
+        <Switch>
+          {/* add routes with layouts */}
+          <Route path="/admin" component={Admin} />
+          {/* add routes without layouts */}
+          <Route path="/landing" exact component={Landing} />
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/" exact component={Admin} />
+          {/* add redirect for first page */}
+          <Redirect from="*" to="/" />
+          <Redirect from="/signin" to="/" />
+        </Switch>
+      </BrowserRouter>
   ) : (
     <>
       <Switch>
