@@ -70,13 +70,7 @@ export default function MyPortfolios() {
         getUserId().then(value => {
             createWidget('uI8InzYn', {
                 container: document.querySelector('#form'),
-                hidden: {userid: value},
-                onSubmit: (payload) => {
-                    setTimeout()
-                    getUsersPortfolios().then(value => {
-                        setPortfolios(value)
-                    })
-                }
+                hidden: {userid: value}
             })
         });
         getUsersPortfolios().then(value => {
