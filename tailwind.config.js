@@ -4,6 +4,9 @@ module.exports = {
     'src/**/*.js',
     'src/**/*.jsx',
   ],
+  future: {
+    purgeLayersByDefault: true,
+  },
   theme: {
     extend: {
       colors: {
