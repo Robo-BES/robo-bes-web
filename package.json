@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@typeform/embed": "^1.6.1",
     "aos": "^3.0.0-beta.6",
     "autoprefixer": "^9.8.6",
     "aws-amplify": "^3.3.26",
@@ -23,6 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.4.1",
+    "react-typeform-embed": "^0.2.1",
     "tailwindcss": "^1.9.6"
   },
   "scripts": {

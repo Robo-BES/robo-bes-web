@@ -4,9 +4,10 @@ import { schema } from './schema';
 
 
 
-const { FundMetrics, FundGeneralInfo, PortfolioFund, Portfolio, User, Survey } = initSchema(schema);
+const { ModelPredictions, FundMetrics, FundGeneralInfo, PortfolioFund, Portfolio, User, Survey } = initSchema(schema);
 
 export {
+  ModelPredictions,
   FundMetrics,
   FundGeneralInfo,
   PortfolioFund,

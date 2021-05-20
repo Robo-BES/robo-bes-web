@@ -4,6 +4,53 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+export declare class ModelPredictions {
+  readonly id: string;
+  readonly date?: string;
+  readonly modeltype?: string;
+  readonly AEC?: number;
+  readonly AEE?: number;
+  readonly AEN?: number;
+  readonly AEP?: number;
+  readonly AEU?: number;
+  readonly AEZ?: number;
+  readonly AGL?: number;
+  readonly ALH?: number;
+  readonly ALI?: number;
+  readonly ALR?: number;
+  readonly ALS?: number;
+  readonly ALU?: number;
+  readonly AMA?: number;
+  readonly AMB?: number;
+  readonly AMF?: number;
+  readonly AMG?: number;
+  readonly AMP?: number;
+  readonly AMR?: number;
+  readonly AMS?: number;
+  readonly AMY?: number;
+  readonly AMZ?: number;
+  readonly APG?: number;
+  readonly AUA?: number;
+  readonly AUG?: number;
+  readonly AZA?: number;
+  readonly AZB?: number;
+  readonly AZD?: number;
+  readonly AZH?: number;
+  readonly AZK?: number;
+  readonly AZL?: number;
+  readonly AZM?: number;
+  readonly AZN?: number;
+  readonly AZO?: number;
+  readonly AZS?: number;
+  readonly AZT?: number;
+  readonly AZY?: number;
+  readonly FYU?: number;
+  readonly FYY?: number;
+  readonly KOE?: number;
+  constructor(init: ModelInit<ModelPredictions>);
+  static copyOf(source: ModelPredictions, mutator: (draft: MutableModel<ModelPredictions>) => MutableModel<ModelPredictions> | void): ModelPredictions;
+}
+
 export declare class FundMetrics {
   readonly id: string;
   readonly FundGeneralInfo?: FundGeneralInfo;
@@ -15,6 +62,8 @@ export declare class FundMetrics {
   readonly six_monthly_yield?: number;
   readonly yearly_yield?: number;
   readonly price?: number;
+  readonly fundgeneralinfoID?: string;
+  readonly code?: string;
   constructor(init: ModelInit<FundMetrics>);
   static copyOf(source: FundMetrics, mutator: (draft: MutableModel<FundMetrics>) => MutableModel<FundMetrics> | void): FundMetrics;
 }
@@ -23,9 +72,9 @@ export declare class FundGeneralInfo {
   readonly id: string;
   readonly code?: string;
   readonly description?: string;
-  readonly volume?: number;
   readonly bes_group_name?: string;
   readonly PortfolioFunds?: (PortfolioFund | null)[];
+  readonly FundMetrics?: (FundMetrics | null)[];
   constructor(init: ModelInit<FundGeneralInfo>);
   static copyOf(source: FundGeneralInfo, mutator: (draft: MutableModel<FundGeneralInfo>) => MutableModel<FundGeneralInfo> | void): FundGeneralInfo;
 }

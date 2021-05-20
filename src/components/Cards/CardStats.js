@@ -8,8 +8,7 @@ export default function CardStats({
   statPercent,
   statPercentColor,
   statDescripiron,
-  statIconName,
-  statIconColor,
+  statIcon,
 }) {
   return (
     <>
@@ -27,11 +26,10 @@ export default function CardStats({
             <div className="relative w-auto pl-4 flex-initial">
               <div
                 className={
-                  "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full " +
-                  statIconColor
+                  "text-white text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full "
                 }
               >
-                <i className={statIconName}></i>
+                <img src={statIcon} alt=""/>
               </div>
             </div>
           </div>

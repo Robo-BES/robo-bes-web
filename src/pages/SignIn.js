@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 
 import { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react';
 
 async function signIn(email, password) {
     try {
@@ -44,7 +44,11 @@ function SignIn() {
               </div>
 
               {/* Form */}
-              <AmplifyAuthenticator />
+                <AmplifyAuthenticator>
+                    <AmplifySignUp headerText="Sign Up Header"
+                                   formFields={[{ type: 'username', label: 'Email', placeholder: 'Email', hint: 'Enter Your Email', required: true }, { type: 'name', label: 'Name', placeholder: 'Your Name', hint: 'Enter Your Name', required: true }, { type: 'password', label: 'Password', placeholder: 'Enter Your Password', hint: 'Password', required: true }]}
+                                   slot="sign-up" />
+                </AmplifyAuthenticator>
               
             </div>
           </div>

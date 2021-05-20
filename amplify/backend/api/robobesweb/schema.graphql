@@ -1,4 +1,49 @@
-type FundMetrics @model @auth(rules: [{allow: public}]) {
+type ModelPredictions @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  date: AWSDate
+  modeltype: String
+  AEC: Float
+  AEE: Float
+  AEN: Float
+  AEP: Float
+  AEU: Float
+  AEZ: Float
+  AGL: Float
+  ALH: Float
+  ALI: Float
+  ALR: Float
+  ALS: Float
+  ALU: Float
+  AMA: Float
+  AMB: Float
+  AMF: Float
+  AMG: Float
+  AMP: Float
+  AMR: Float
+  AMS: Float
+  AMY: Float
+  AMZ: Float
+  APG: Float
+  AUA: Float
+  AUG: Float
+  AZA: Float
+  AZB: Float
+  AZD: Float
+  AZH: Float
+  AZK: Float
+  AZL: Float
+  AZM: Float
+  AZN: Float
+  AZO: Float
+  AZS: Float
+  AZT: Float
+  AZY: Float
+  FYU: Float
+  FYY: Float
+  KOE: Float
+}
+
+type FundMetrics @model @auth(rules: [{allow: public}]) @key(name: "byFundGeneralInfo", fields: ["fundgeneralinfoID"]) {
   id: ID!
   FundGeneralInfo: FundGeneralInfo @connection
   date: AWSDate
@@ -9,15 +54,17 @@ type FundMetrics @model @auth(rules: [{allow: public}]) {
   six_monthly_yield: Float
   yearly_yield: Float
   price: Float
+  fundgeneralinfoID: ID
+  code: String
 }
 
 type FundGeneralInfo @model @auth(rules: [{allow: public}]) {
   id: ID!
   code: String
   description: String
-  volume: Float
   bes_group_name: String
   PortfolioFunds: [PortfolioFund] @connection(keyName: "byFundGeneralInfo", fields: ["id"])
+  FundMetrics: [FundMetrics] @connection(keyName: "byFundGeneralInfo", fields: ["id"])
 }
 
 type PortfolioFund @model @auth(rules: [{allow: public}]) @key(name: "byFundGeneralInfo", fields: ["fundgeneralinfoID"]) @key(name: "byPortfolio", fields: ["portfolioID"]) {

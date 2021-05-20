@@ -1,37 +1,36 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "robobea472ebdb",
+    "resourceNameTruncated": "robobe16d7a5cc",
     "userPoolName": "robobesweb",
     "autoVerifiedAttributes": [
-        "phone_number"
+        "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
         "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Body {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Forgot password code: {####}",
+    "emailVerificationMessage": "Forgot password code: {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [
         "Requires Lowercase",
-        "Requires Numbers",
-        "Requires Symbols",
-        "Requires Uppercase"
+        "Requires Numbers"
     ],
     "requiredAttributes": [
-        "email"
+        "email",
+        "name"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "robobea472ebdb_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "robobe16d7a5cc_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "a472ebdb",
+    "sharedId": "16d7a5cc",
     "resourceName": "robobesweb",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -57,6 +56,5 @@
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
-    "dependsOn": [],
-    "hostedUI": false
+    "dependsOn": []
 }

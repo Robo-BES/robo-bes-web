@@ -1,5 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { createPopper } from "@popperjs/core";
+import {API, Auth} from "aws-amplify";
+import {AmplifySignOut} from "@aws-amplify/ui-react";
+
+async function getUserData(){
+    var temp = await Auth.currentUserInfo();
+    console.log(temp);
+    return temp.attributes.email.split('@')[0];
+}
 
 const UserDropdown = () => {
   // dropdown props
@@ -15,7 +23,12 @@ const UserDropdown = () => {
   const closeDropdownPopover = () => {
     setDropdownPopoverShow(false);
   };
-  return (
+
+    const [userData, setUserData] = useState("Loading...");
+    useEffect(() => {
+        getUserData().then(value => {setUserData(value)});
+    }, []);
+    return (
     <>
       <a
         className="text-blueGray-500 block"
@@ -27,12 +40,8 @@ const UserDropdown = () => {
         }}
       >
         <div className="items-center flex">
-          <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
-            <img
-              alt="..."
-              className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("../../assets/img/team-1-800x800.jpg").default}
-            />
+          <span className="w-12 h-12 text-lg text-black bg-blueGray-200 inline-flex items-center justify-center">
+            {userData}
           </span>
         </div>
       </a>
@@ -78,7 +87,7 @@ const UserDropdown = () => {
           }
           onClick={(e) => e.preventDefault()}
         >
-          Seprated link
+          <AmplifySignOut/>
         </a>
       </div>
     </>

@@ -1,5 +1,328 @@
 export const schema = {
     "models": {
+        "ModelPredictions": {
+            "name": "ModelPredictions",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "modeltype": {
+                    "name": "modeltype",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEC": {
+                    "name": "AEC",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEE": {
+                    "name": "AEE",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEN": {
+                    "name": "AEN",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEP": {
+                    "name": "AEP",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEU": {
+                    "name": "AEU",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AEZ": {
+                    "name": "AEZ",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AGL": {
+                    "name": "AGL",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ALH": {
+                    "name": "ALH",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ALI": {
+                    "name": "ALI",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ALR": {
+                    "name": "ALR",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ALS": {
+                    "name": "ALS",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ALU": {
+                    "name": "ALU",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMA": {
+                    "name": "AMA",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMB": {
+                    "name": "AMB",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMF": {
+                    "name": "AMF",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMG": {
+                    "name": "AMG",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMP": {
+                    "name": "AMP",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMR": {
+                    "name": "AMR",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMS": {
+                    "name": "AMS",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMY": {
+                    "name": "AMY",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AMZ": {
+                    "name": "AMZ",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "APG": {
+                    "name": "APG",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AUA": {
+                    "name": "AUA",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AUG": {
+                    "name": "AUG",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZA": {
+                    "name": "AZA",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZB": {
+                    "name": "AZB",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZD": {
+                    "name": "AZD",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZH": {
+                    "name": "AZH",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZK": {
+                    "name": "AZK",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZL": {
+                    "name": "AZL",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZM": {
+                    "name": "AZM",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZN": {
+                    "name": "AZN",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZO": {
+                    "name": "AZO",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZS": {
+                    "name": "AZS",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZT": {
+                    "name": "AZT",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "AZY": {
+                    "name": "AZY",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "FYU": {
+                    "name": "FYU",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "FYY": {
+                    "name": "FYY",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "KOE": {
+                    "name": "KOE",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "ModelPredictions",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "FundMetrics": {
             "name": "FundMetrics",
             "fields": {
@@ -78,6 +401,20 @@ export const schema = {
                     "type": "Float",
                     "isRequired": false,
                     "attributes": []
+                },
+                "fundgeneralinfoID": {
+                    "name": "fundgeneralinfoID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "code": {
+                    "name": "code",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -86,6 +423,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byFundGeneralInfo",
+                        "fields": [
+                            "fundgeneralinfoID"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -129,13 +475,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "volume": {
-                    "name": "volume",
-                    "isArray": false,
-                    "type": "Float",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "bes_group_name": {
                     "name": "bes_group_name",
                     "isArray": false,
@@ -148,6 +487,20 @@ export const schema = {
                     "isArray": true,
                     "type": {
                         "model": "PortfolioFund"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "fundgeneralinfoID"
+                    }
+                },
+                "FundMetrics": {
+                    "name": "FundMetrics",
+                    "isArray": true,
+                    "type": {
+                        "model": "FundMetrics"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -600,5 +953,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4f6e147c94a584c9059ff6b5fcdab63f"
+    "version": "32ee25a2077e82d1b1609bba451d5a3e"
 };
