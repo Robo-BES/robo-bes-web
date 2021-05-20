@@ -1,29 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
 
-import { Auth } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react';
 
-async function signIn(email, password) {
-    try {
-        return await Auth.signIn(email, password);
-    } catch (error) {
-        console.log('error signing in', error);
-    }
-}
-
 function SignIn() {
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
-    let email = e.target.elements.email?.value;
-    let password = e.target.elements.password?.value;
-
-    console.log(await signIn(email, password));
-};
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">

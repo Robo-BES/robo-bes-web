@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { createPopper } from "@popperjs/core";
-import {API, Auth} from "aws-amplify";
+import {Auth} from "aws-amplify";
 import {AmplifySignOut} from "@aws-amplify/ui-react";
 
 async function getUserData(){

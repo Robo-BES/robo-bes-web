@@ -22,10 +22,8 @@ import Portfolios from "./layouts/Portfolios.js";
 
 import Landing from "./pages/Landing.js";
 import Profile from "./pages/Profile.js";
-import Index from "./pages/Index.js";
 
-import Amplify, {Auth} from 'aws-amplify';
-import {AmplifyAuthenticator, AmplifySignOut} from '@aws-amplify/ui-react';
+import Amplify from 'aws-amplify';
 import {AuthState, onAuthUIStateChange} from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
 

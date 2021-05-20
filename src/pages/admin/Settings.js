@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 
 // components
 
-import CardSettings from "../../components/Cards/CardSettings.js";
-import CardProfile from "../../components/Cards/CardProfile.js";
-import {createWidget} from "@typeform/embed";
 import Amplify from "aws-amplify";
 
 const getUser = async () => {

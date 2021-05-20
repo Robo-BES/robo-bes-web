@@ -2,14 +2,7 @@ import React, {useEffect, useState} from "react";
 import {createWidget} from '@typeform/embed'
 import '@typeform/embed/build/css/widget.css'
 import Amplify, {API, Auth} from "aws-amplify";
-import CardTable from "../../components/Cards/CardTable";
 import TableDropdown from "../../components/Dropdowns/TableDropdown";
-
-function createTypeFormUrl(userId) {
-    var url = "https://manjo20.typeform.com/to/uI8InzYn#userid=" + userId
-    console.log('Typeform URL' + url);
-    return url;
-}
 
 const getUserId = async () => {
     var userInfo = await Amplify.Auth.currentUserInfo()
@@ -69,14 +62,12 @@ async function getUsersPortfolios() {
 
 export default function MyPortfolios() {
 
-    const [userId, setUserId] = useState(null);
     const [portfolios, setPortfolios] = useState(null);
 
     useEffect(() => {
         // You need to restrict it at some point
         // This is just dummy code and should be replaced by actual
         getUserId().then(value => {
-            setUserId(value);
             createWidget('uI8InzYn', {
                 container: document.querySelector('#form'),
                 hidden: {userid: value},
