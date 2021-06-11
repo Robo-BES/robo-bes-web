@@ -1,10 +1,10 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../images/robobeslogo.png"
 
 import NotificationDropdown from "../Dropdowns/NotificationDropdown.js";
 import UserDropdown from "../Dropdowns/UserDropdown.js";
-import {AmplifySignOut} from "@aws-amplify/ui-react";
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
@@ -18,14 +18,14 @@ export default function Sidebar() {
             type="button"
             onClick={() => setCollapseShow("bg-white m-2 py-3 px-6")}
           >
-            <i className="fas fa-bars"></i>
+            <i className="fas fa-bars"/>
           </button>
           {/* Brand */}
           <Link
             className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            <img className="relative" src={require('../../images/robobes-logo.png')} alt="Testimonial 01" />
+            <img className="relative" src={logo} alt="RoboBES logo" />
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
@@ -60,7 +60,7 @@ export default function Sidebar() {
                     className="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
                     onClick={() => setCollapseShow("hidden")}
                   >
-                    <i className="fas fa-times"></i>
+                    <i className="fas fa-times"/>
                   </button>
                 </div>
               </div>
@@ -96,13 +96,13 @@ export default function Sidebar() {
                   to="/portfolios/dashboard"
                 >
                   <i
-                    className={
-                      "fas fa-tv mr-2 text-sm " +
-                      (window.location.href.indexOf("/portfolios/dashboard") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
+    className={
+      "fas fa-tv mr-2 text-sm " +
+      (window.location.href.indexOf("/portfolios/dashboard") !== -1
+          ? "opacity-75"
+          : "text-blueGray-300")
+    }
+    />{" "}
                   Dashboard
                 </Link>
               </li>
@@ -118,13 +118,13 @@ export default function Sidebar() {
                   to="/portfolios/my-portfolios"
                 >
                   <i
-                    className={
-                      "fas fa-map-marked mr-2 text-sm " +
-                      (window.location.href.indexOf("/portfolios/my-portfolios") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
+    className={
+      "fas fa-map-marked mr-2 text-sm " +
+      (window.location.href.indexOf("/portfolios/my-portfolios") !== -1
+          ? "opacity-75"
+          : "text-blueGray-300")
+    }
+    />{" "}
                   My Portfolios
                 </Link>
               </li>
@@ -144,7 +144,7 @@ export default function Sidebar() {
                   className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                   to="/portfolios/settings"
                 >
-                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"/>{" "}
                   Settings
                 </Link>
               </li>

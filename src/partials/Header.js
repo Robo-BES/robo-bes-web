@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../images/robobeslogo.png";
 
 function Header() {
 
@@ -23,7 +24,7 @@ function Header() {
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
             <Link to="/" className="block" aria-label="Cruip">
-              <img className="relative" src={require('../images/robobes-logo.png')} height="32" alt="Testimonial 01" />
+              <img className="relative" src={logo} height="32" alt="RoboBES logo" />
             </Link>
           </div>
 

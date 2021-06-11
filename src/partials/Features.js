@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/Transition.js';
+import bl from '../images/blacklitterman.png';
+import mar from '../images/markowitz.png';
+import ef from '../images/efficientfrontier.png';
 
 function Features() {
 
@@ -22,8 +25,8 @@ function Features() {
     <section className="relative">
 
       {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div className="absolute inset-0 bg-gray-100 pointer-events-none mb-16" aria-hidden="true"></div>
-      <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
+      <div className="absolute inset-0 bg-gray-100 pointer-events-none mb-16" aria-hidden="true"/>
+      <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"/>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
@@ -47,7 +50,7 @@ function Features() {
               <div className="mb-8 md:mb-0">
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
+                  href=""
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
@@ -62,7 +65,7 @@ function Features() {
                 </a>
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 2 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
+                  href=""
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
@@ -77,7 +80,7 @@ function Features() {
                 </a>
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
+                  href=""
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
@@ -109,7 +112,7 @@ function Features() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={require('../images/markowitz.png')} width="500" height="462" alt="Features bg" />
+                    <img className="md:max-w-none mx-auto rounded" src={mar} width="500" height="462" alt="Features bg" />
                   </div>
                 </Transition>
                 {/* Item 2 */}
@@ -125,7 +128,7 @@ function Features() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={require('../images/efficient_frontier.png')} width="500" height="462" alt="Features bg" />
+                    <img className="md:max-w-none mx-auto rounded" src={ef} width="500" height="462" alt="Features bg" />
                   </div>
                 </Transition>
                 {/* Item 3 */}
@@ -141,7 +144,7 @@ function Features() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={require('../images/black_litterman.png')} width="500" height="462" alt="Features bg" />
+                    <img className="md:max-w-none mx-auto rounded" src={bl} width="500" height="462" alt="Features bg" />
                   </div>
                 </Transition>
               </div>

@@ -36,14 +36,14 @@ export default function CardStats({
           <p className="text-sm text-blueGray-400 mt-4">
             <span className={statPercentColor + " mr-2"}>
               <i
-                className={
-                  statArrow === "up"
-                    ? "fas fa-arrow-up"
-                    : statArrow === "down"
-                    ? "fas fa-arrow-down"
-                    : ""
-                }
-              ></i>{" "}
+    className={
+      statArrow === "up"
+          ? "fas fa-arrow-up"
+          : statArrow === "down"
+          ? "fas fa-arrow-down"
+          : ""
+    }
+    />{" "}
               {statPercent}%
             </span>
             <span className="whitespace-nowrap">{statDescripiron}</span>
