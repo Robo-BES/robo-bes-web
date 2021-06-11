@@ -45,7 +45,6 @@
     ]
   },
   "devDependencies": {
-    "babel-loader": "^8.2.2",
     "request": "^2.88.2"
   }
 }
